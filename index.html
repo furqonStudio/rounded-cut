@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rounded Cut</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: black;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 80px;
+      }
+      .container .card {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        background: var(--clr);
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .container .card .box {
+        position: absolute;
+        right: 0;
+        width: 140px;
+        height: 70px;
+        border-radius: 20px;
+        background: black;
+      }
+      .container .card .box .icon {
+        position: absolute;
+        right: 0;
+        width: 120px;
+        height: 50px;
+        border-radius: 20px;
+        background: var(--clr);
+        transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+      }
+      .container .card .box .icon:hover {
+        background: yellow;
+        transform: scale(0.9);
+      }
+      .container .card .box::before {
+        content: '';
+        position: absolute;
+        left: -40px;
+        width: 40px;
+        height: 40px;
+        border-top-right-radius: 20px;
+        background: transparent;
+        box-shadow: 20px -10px 0 0px black;
+      }
+      .container .card .box::after {
+        content: '';
+        position: absolute;
+        bottom: -40px;
+        right: 0px;
+        width: 40px;
+        height: 40px;
+        border-top-right-radius: 20px;
+        background: transparent;
+        box-shadow: 20px -20px 0 0px black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card" style="--clr: #ff1f6b">
+        <div class="box">
+          <div class="icon"><p>Hello world</p></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
